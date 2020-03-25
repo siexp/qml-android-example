@@ -10,5 +10,12 @@ Window {
     Rectangle {
         anchors.fill: parent
         color: "#baeb34"
+
+        Text {
+            id: greetings
+            text: qsTr("Welcome to QML Android Exmaple")
+            font.pixelSize: 32
+            wrapMode: Text.WordWrap
+        }
     }
 }

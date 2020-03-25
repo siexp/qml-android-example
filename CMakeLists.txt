@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.15)
 
 project(qml-android-example LANGUAGES CXX)
 
@@ -18,8 +18,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if(ANDROID)
     set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/platform/android")
     set(ANDROID_EXTRA_LIBS
-        ${CMAKE_CURRENT_SOURCE_DIR}/platform/android/latest/${ANDROID_ABI}/libcrypto_1_1.so
-        ${CMAKE_CURRENT_SOURCE_DIR}/platform/android/latest/${ANDROID_ABI}/libssl_1_1.so
+        ${CMAKE_CURRENT_SOURCE_DIR}/platform/android/openssl/latest/${ANDROID_ABI}/libcrypto_1_1.so
+        ${CMAKE_CURRENT_SOURCE_DIR}/platform/android/openssl/latest/${ANDROID_ABI}/libssl_1_1.so
     )
 endif()
 
