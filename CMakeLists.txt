@@ -14,13 +14,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.
 # Check http://doc.qt.io/qt-5/deployment-android.html for more information.
 # They need to be set before the find_package(Qt5 ...) call.
-
 if(ANDROID)
-    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/platform/android")
-    set(ANDROID_EXTRA_LIBS
-        ${CMAKE_CURRENT_SOURCE_DIR}/platform/android/openssl/latest/${ANDROID_ABI}/libcrypto_1_1.so
-        ${CMAKE_CURRENT_SOURCE_DIR}/platform/android/openssl/latest/${ANDROID_ABI}/libssl_1_1.so
-    )
+    include(${CMAKE_CURRENT_SOURCE_DIR}/platform/android/openssl/CMakeLists.txt)
 endif()
 
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
